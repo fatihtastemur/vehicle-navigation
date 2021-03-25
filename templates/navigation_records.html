@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <title>Navigation Records</title>
+    </head>
+    <body style="background-color:#F8F9FA;">
+        <div class="container">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <br/><h3>All Navigation Records</h3><br/>
+                <table class="table-striped table-bordered">
+                    <thead style="background-color:#0F9D58; color:#FFF;">
+                        <th style="width:200px; text-align:center;">ID</th>
+                        <th style="width:600px; text-align:center;">Vehicle</th>
+                        <th style="width:200px; text-align:center;">Latitude</th>
+                        <th style="width:200px; text-align:center;">Longtitude</th>
+                        <th style="width:600px; text-align:center;">Datetime</th>
+                    </thead>
+                    <tbody>
+                        {% for navigation_record in navigation_records %}
+                            <tr>
+                                <td style="text-align:center;">{{ navigation_record.id }}</td>
+                                <td style="text-align:center;">{{ navigation_record.vehicle }}</td>
+                                <td style="text-align:center;">{{ navigation_record.latitude }}</td>
+                                <td style="text-align:center;">{{ navigation_record.longtitude }}</td>
+                                <td style="text-align:center;">{{ navigation_record.datetime }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </body>
+</html>

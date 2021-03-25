@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <title>Vehicle List</title>
+    </head>
+    <body style="background-color:#F8F9FA;">
+        <div class="container">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <br/><h3>Vehicle List</h3><br/>
+                <table class="table-striped table-bordered">
+                    <thead style="background-color:#4285F4;color:#FFF;">
+                        <th style="width:200px; text-align:center;">ID</th>
+                        <th style="width:600px; text-align:center;">Plate</th>
+                    </thead>
+                    <tbody>
+                        {% for vehicle in vehicles %}
+                            <tr>
+                                <td style="text-align:center;">{{ vehicle.id }}</td>
+                                <td style="text-align:center;">{{ vehicle.plate }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </body>
+</html>
